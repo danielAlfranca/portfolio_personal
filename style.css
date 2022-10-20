@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* GENERAL */
+
+:root {
+    font-size: 16px;
+    --sliderWidth: 90vw;
+    --sliderHeight: 76vh;
+    --heightAppOffset: 12vh;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.bg-green-yellow {
+    background-color: greenyellow;
+}
+
+.custom-scrollbar {
+    scrollbar-color: #747484 #e0e0e0;
+    scrollbar-width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border: 0px none #e0e0e0;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e0e0e0
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track {
+    background: #747484;
+    border: 0px none #e0e0e0;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #747484;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #747484;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+
+/* HEADER */
+
+header {
+    min-height: var(--heightAppOffset);
+    z-index: 3;
+}
+
+.nav>a.nav-link {
+    opacity: 0.8;
+    z-index: 3;
+}
+
+.nav>a.nav-link:hover,
+a {
+    color: white !important;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+
+/* FOOTER */
+
+footer {
+    height: var(--heightAppOffset);
+}
+
+
+/* APP SLIDER */
+
+#appSlider {
+    width: var(--sliderWidth);
+    height: var(--sliderHeight);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.inner-slider {
+    width: 300%;
+    height: 200%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: margin 1s;
+}
+
+.slide {
+    height: 50%;
+    width: var(--sliderWidth);
+}
+
+
+/* HOME GRID  */
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: repeat(6, 16.6666667%);
+    grid-template-areas: "angular angular laravel laravel laravel bootstrap bootstrap bootstrap" "angular angular  laravel laravel laravel bootstrap bootstrap bootstrap" "angular angular name name name name sass sass" "html5 html5 name name name name sass sass" "html5 html5 php php css css sass sass" "html5 html5 php php css css js js";
+    width: 100%;
+    height: 100%;
+}
+
+
+/* HOME GRID ITEMS */
+
+.center {
+    grid-area: name;
+}
+
+.angular {
+    grid-area: angular;
+}
+
+.wordpress {
+    grid-area: wordpress;
+}
+
+.sass {
+    grid-area: sass;
+}
+
+.php {
+    grid-area: php;
+}
+
+.laravel {
+    grid-area: laravel;
+}
+
+.css {
+    grid-area: css;
+}
+
+.bootstrap {
+    grid-area: bootstrap;
+}
+
+.html5 {
+    grid-area: html5;
+}
+
+.js {
+    grid-area: js;
+}
+
+.angular:hover:after {
+    content: 'Angular';
+}
+
+.wordpress:hover:after {
+    content: 'Wordpress';
+}
+
+.sass:hover:after {
+    content: 'Sass';
+}
+
+.js:hover::after {
+    content: 'JS';
+}
+
+.php:hover::after {
+    content: 'PHP';
+}
+
+.laravel:hover::after {
+    content: 'Laravel';
+}
+
+.bootstrap:hover::after {
+    content: 'Bootstrap';
+}
+
+.css:hover::after {
+    content: 'SQL';
+}
+
+.html5:hover::after {
+    content: 'git';
+}
+
+.home-grid img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.home-grid .img {
+    /* CLASE PARA CONTAINER DE IMGS */
+    opacity: 0.9;
+    transition: border 0.5s;
+    border: solid 0 greenyellow;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* HOME GRID CENTRO */
+
+.home-grid .center {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.home-grid .center .name {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.home-grid .center i {
+    display: none;
+}
+
+
+/* PROFILE SECTION */
+
+.resume p {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.resume .badge {
+    min-width: 5rem;
+}
+
+.photo {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background-image: url('img/profile.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    background-position: center;
+    filter: grayscale(0.9);
+    border-radius: 9px;
+}
+
+.accordion {
+    max-width: 30rem;
+    overflow: auto;
+    border-radius: 9px;
+    fill: #364754;
+    opacity: 0.95;
+}
+
+
+/* CONTACTO SECTION */
+
+.slide.contacto-section {
+    overflow: auto;
+}
+
+h2 {
+    color: greenyellow;
+}
+
+.intro {
+    max-width: 20rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+form {
+    max-width: 22rem;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 1px white;
+}
+
+
+/* PORTFOLIO SECTION */
+
+#carouselPortfolio {
+    width: 100%;
+    flex-wrap: wrap;
+    height: calc(100vh - (var(--heightAppOffset) * 2) - 12rem);
+    overflow: hidden;
+    position: relative;
+}
+
+#carouselPortfolio .innerPortfolio {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 0.5s;
+    display: flex;
+    align-items: stretch;
+}
+
+.innerPortfolio>div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#carouselPortfolio img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 1rem;
+    filter: grayscale(0.5);
+    opacity: 0.5;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.8);
+    transition: box-shadow 0.3s, opacity 0.3s, filter 0.3s;
+    
+}
+
+
+#carouselPortfolio img:hover{
+
+    opacity: 1;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 0px black;
+    filter: saturate(0.8);
+    
+}
+
+.portfolio-item-title{
+
+    font-weight: bold;
+    opacity: 0.85;
+}
+
+.offcanvas-body{
+
+    opacity: 0.85;
+    padding-top: 0;
+}
+
+.offcanvas-body img {
+    width: 100%;
+}
+
+.portfolio-item-img{
+
+    margin: 0 -1rem;
+}
+
+.imgPortfolio{
+
+    padding: 1rem;
+    
+}
+
+
+
+@media screen and (min-width:768px) {
+    .accordion {
+        max-height: 67vh;
+    }
+    /* HOME HOVER GRID ANIMATIONS */
+    .img:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+        color: greenyellow;
+        transition: font-size 0.5s;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .img:hover:after {
+        font-size: 1.5rem;
+        background: rgba(0, 0, 0, 0.300);
+    }
+    .horizontal:hover {
+        /* SE AMPLIAN LOS BORDES DEL EJE X */
+        border-width: 3rem 0;
+    }
+    .vertical:hover {
+        /* SE AMPLIAN LOS BORDES DEL EJE Y Y SE PONE EL TEXTO EN VERTICAL */
+        border-width: 0 3rem;
+        text-orientation: upright;
+        writing-mode: vertical-rl;
+        letter-spacing: -0.75rem;
+    }
+    .home-grid .center i {
+        opacity: 0;
+        transition: opacity 0.05s, transform 0.5s, background-color 0.5s;
+        transform: rotate(180deg);
+        cursor: pointer;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+    }
+    .home-grid .center i.bi-arrow-left {
+        top: calc(50% - 1.25rem);
+        left: 0.5rem;
+    }
+    .home-grid .center i.bi-arrow-right {
+        top: calc(50% - 1.25rem);
+        right: 0.5rem;
+    }
+    .home-grid .center i.bi-arrow-down {
+        bottom: 0.5rem;
+        left: calc(50% - 1.25rem);
+    }
+    .home-grid .center .box-name {
+        transition: margin 0.5s;
+    }
+    .home-grid .center:hover .box-name {
+        margin-bottom: 1.5rem;
+    }
+    .home-grid .center:hover i {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    .home-grid .center i:hover {
+        opacity: 1;
+        color: grey;
+        background-color: white;
+    }
+}
+
+@media screen and (min-width:992px) {
+    #carouselPortfolio {
+        height: calc(100vh - (var(--heightAppOffset) * 2));
+    }
+}

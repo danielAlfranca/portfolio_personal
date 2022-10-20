@@ -1,0 +1,129 @@
+/* COORDENADAS */
+
+:root {
+    --in_home: 0 0 0 calc(var(--sliderWidth) * (-1));
+    --in_profile: 0 0 0 0;
+    --in_portfolio: 0 0 0 calc(var(--sliderWidth) * (-2));
+    --in_contact: calc(var(--sliderHeight) * (-1)) 0 0 calc(var(--sliderWidth) * (-1));
+}
+
+
+/* COORDENADAS DE SECCIONES DENTRO DE SLIDER */
+
+.in_home>.inner-slider {
+    margin: var(--in_home);
+}
+
+.in_profile>.inner-slider {
+    margin: var(--in_profile);
+}
+
+.in_portfolio>.inner-slider {
+    margin: var(--in_portfolio);
+}
+
+.in_contact>.inner-slider {
+    margin: var(--in_contact);
+}
+
+
+/* RUTAS DE DESPLAZAMIENTOS ENTRE SECCIONES */
+
+.in_contact.from_profile>.inner-slider {
+    animation: inContactFromProfile 2s;
+}
+
+@keyframes inContactFromProfile {
+    0% {
+        margin: var(--in_profile);
+    }
+    50% {
+        margin: var(--in_home);
+    }
+    100% {
+        margin: var(--in_contact);
+    }
+}
+
+.in_contact.from_portfolio>.inner-slider {
+    animation: inContactFromPortfolio 2s;
+}
+
+@keyframes inContactFromPortfolio {
+    0% {
+        margin: var(--in_portfolio);
+    }
+    50% {
+        margin: var(--in_home);
+    }
+    100% {
+        margin: var(--in_contact);
+    }
+}
+
+.in_profile.from_contact>.inner-slider {
+    animation: inProfileFromContact 2s;
+}
+
+@keyframes inProfileFromContact {
+    0% {
+        margin: var(--in_contact)
+    }
+    50% {
+        margin: var(--in_home);
+    }
+    100% {
+        margin: var(--in_profile)
+    }
+}
+
+.in_portfolio.from_contact>.inner-slider {
+    animation: inPortfolioFromContact 2s;
+}
+
+@keyframes inPortfolioFromContact {
+    0% {
+        margin: var(--in_contact);
+    }
+    50% {
+        margin: var(--in_home);
+    }
+    100% {
+        margin: var(--in_portfolio);
+    }
+}
+
+.in_profile.from_portfolio>.inner-slider {
+    animation: inProfileFromPortfolio 2s;
+}
+
+@keyframes inProfileFromPortfolio {
+    0% {
+        margin: var(--in_portfolio);
+    }
+    50% {
+        margin: var(--in_home);
+    }
+    100% {
+        margin: var(--in_profile);
+    }
+}
+
+.in_portfolio.from_profile>.inner-slider {
+    animation: inPortfolioFromProfile 2s;
+}
+
+@keyframes inPortfolioFromProfile {
+    0% {
+        margin: var(--in_profile);
+    }
+    50% {
+        margin: var(--in_home);
+    }
+    100% {
+        margin: var(--in_portfolio);
+    }
+}
+
+
+/* CAROUSEL 3D CLASES NOMBRE */

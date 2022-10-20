@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--
+
+        BOOTSTRAP
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--
+
+        BOOTSTRAP ICONS
+    -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!--
+
+       CUSTOM STYLESHEETS
+
+    -->
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+
+</head>
+
+<body class="bg-dark">
+
+    <main>
+        <header class="navbar navbar-expand-md overflow-hidden navbar-dark bg-dark">
+            <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse d-md-flex justify-content-center" id="navbarSupportedContent">
+                <nav class="nav d-block d-md-flex mt-2 ms-3 ms-md-0 mt-md-0 justify-content-center align-items-center h-100">
+                    <a class="nav-link text-light" href="#home" id="homeNav">Home</a>
+                    <a class="nav-link text-light" href="#profile?from=home" id="profileNav">Profile</a>
+                    <a class="nav-link text-light" href="#portfolio?from=home" id="portfolioNav">Portfolio</a>
+                    <!-- <a class="nav-link text-light" href="#contact?from=home" id="contactNav">Contact</a> -->
+                </nav>
+            </div>
+        </header>
+        <!--
+
+            SECCIONES
+
+        -->
+        <section id="appSlider" class="in_home">
+            <div class="inner-slider">
+                <div class="slide profile-section">
+                    <!--
+
+                            PROFILE
+
+                        -->
+                    <div class="section-content h-100 d-md-flex justify-content-center align-items-center" style="overflow: auto;">
+                        <div class="intro text-light mx-auto mb-4 w-100">
+                            <h2 class="display-5 mb-4 text-center text-md-left">My Profile</h1>
+
+                                <div class="photo mb-4" id="photo">
+
+                                </div>
+
+                                <div class="resume  border border-light border-3 rounded-2 p-3">
+                                    <p class="mb-2"><span class="badge bg-green-yellow me-3 text-dark">Name</span>Daniel Alfranca</p>
+                                    <p class="mb-2"><span class="badge bg-green-yellow me-3 text-dark">Age</span><span id="ageProfile"></span></p>
+                                    <p class="mb-2"><span class="badge bg-green-yellow me-3 text-dark">Genre</span>Developer</p>
+                                    <p class="mb-0"><span class="badge bg-green-yellow me-3 text-dark">Hobby</span>Ancient history, Movies, Chess</p>
+                                </div>
+
+
+                        </div>
+                        <div class="skills mx-auto ms-md-5 w-100 custom-scrollbar">
+                            <div class="accordion accordion-flush m-auto custom-scrollbar shadow-lg" id="accordionSkills">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="slide home-section">
+                    <!--
+
+                        HOME SECTION
+
+                    -->
+                    <div class="section-content home-grid position-relative" id="homeGrid">
+                        <div class="center" id="name">
+                            <div class="name text-light d-flex">
+
+                                <div class="text-center box-name">
+                                    <strong class="display-5"> Daniel Alfranca</strong><br>
+                                    <span class="fs-4">WEB DEVELOPER</span>
+                                </div>
+                                <a href="#profile?from=home">
+                                    <i class="bi bi-arrow-left fs-3" id="toPortfolioBtn"></i>
+                                </a>
+                                <a href="#portfolio?from=home">
+                                    <i class="bi bi-arrow-right fs-3" id="toProfileBtn"></i>
+                                </a>
+                                <!-- <a href="#contact?from=home">
+                                    <i class="bi bi-arrow-down fs-3" id="toContactBtn"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                        <div id="toProfileBtnAnimationFrame" class="homeAnimationFrame"></div>
+                    </div>
+                </div>
+
+                <div class="slide portfolio-section">
+                    <!--
+
+                        PORTFOLIO SECTION
+
+                    -->
+                    <div class="section-content d-lg-flex align-items-center">
+                        <div class="d-flex flex-column">
+                            <h2 class="display-5 mb-3 text-center text-lg-start">My Portfolio</h2>
+                            <ul class="mb-3 ps-3 text-light text-center text-lg-start">
+                                <li>Click on the items for more info</li>
+                                <!-- <li>Slide for more items</li> -->
+                            </ul>
+                            <!-- <div class=" d-flex justify-content-between align-items-stretch mx-auto mt-4 w-100 " style="max-width: 280px;">
+                                <button class="btn bg-green-yellow rounded-0" onclick="moveSliderPortfolio(-1)">
+                                        <i class="bi bi-arrow-left fs-5 " ></i>
+                                    </button>
+                                <button class="btn btn-primary fs-5 w-100 rounded-0" onclick="changeSliderAuto()" id="btnAuto">
+                                    <i class="bi bi-play"></i>
+                                    </button>
+                                <button class="btn bg-green-yellow rounded-0">
+                                        <i class="bi bi-arrow-right fs-5" onclick="moveSliderPortfolio(1)"></i>
+                                    </button>
+
+
+                            </div> -->
+
+                        </div>
+
+                        <div class="mx-lg-5 w-100">
+                            <div id="carouselPortfolio">
+                                <div class="innerPortfolio d-flex">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="slide contacto-section">
+                    <!--
+
+                        CONTACTO SECTION
+
+                    -->
+                    <div class="section-content d-md-flex justify-content-center align-items-stretch">
+                        <div class="intro mx-auto text-center">
+                            <h2 class="display-5 mb-5">Get in Touch</h2>
+                            <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptates ipsam tempora, corporis libero iste voluptatibus similique animi non porro tempore hic dicta modi inventore rerum recusandae obcaecati nesciunt perferendis.
+                            </p>
+                        </div>
+
+                        <form class="contact-form my-5 ms-md-5 pb-5 mx-auto">
+                            <div class="form-group">
+                                <label class="text-light">Name</label><input type="text" class="form-control my-3">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-light">Email</label><input type="text" class="form-control my-3">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-light">Message</label><textarea name="" id="" cols="30" rows="6" class="form-control my-3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn bg-green-yellow w-100">Enviar</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+
+            FOOTER
+
+        -->
+        <footer>
+            <nav class="nav justify-content-center h-100 align-items-center">
+                <a class="nav-link text-light" href="https://www.facebook.com/dagilon"><i class="bi bi-facebook"></i></a>
+                <a class="nav-link text-light" href="https://github.com/danielAlfranca"><i class="bi bi-github"></i></a>
+                <a class="nav-link text-light" href="https://www.linkedin.com/in/daniel-alfranca-gil-b4aba0237/"><i class="bi bi-linkedin"></i></a>
+            </nav>
+        </footer>
+
+        <!--
+
+            OFFCANVAS
+
+        -->
+
+        <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header text-light">
+                <h5 id="offcanvasRightLabel" class="portfolio-item-title">Offcanvas right</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body" >
+                <div id="imgPortfolioItem" class="portfolio-item-img">
+
+                </div>
+                <div class="offcanvas-link-container d-flex justify-content-between align-items-center text-light py-4">
+                    <small class="text-uppercase"><strong>LINK</strong>  </small>
+                    <a id="linkItemPortfolio" target="_blank" class="link-primary"></a>
+                </div>
+                <div class="p-3 border border-light rounded-3 text-light" id="itemPortfolioText">
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!--
+
+        TEMPLATES
+
+    -->
+    <template id="itemGrid">
+        <div><img></div>
+    </template>
+
+    <template id="itemGridPortfolio">
+        <div><img data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"></div>
+    </template>
+
+
+    <template id="itemAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header m-0">
+              <button id="" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="" aria-expanded="false" aria-controls="">
+                    
+                    <div class="w-100 px-3 ">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-uppercase"></span>
+                        </div>                      
+                        
+                    
+                        <div class="progress mt-3" style="height: 5px;">
+                            <div class="progress-bar bg-green-yellow" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+              </button>
+             
+                
+            </h2>
+            <div id="" class="accordion-collapse collapse" aria-labelledby="" data-bs-parent="#accordionSkills">
+                <div class="p-3"><span class="badge"></span></div>
+              <div class="accordion-body">
+                  
+              </div>
+            </div>
+        </div>
+    </template>
+
+    <!--
+
+        SVG ICONS - PARA USAR COMO REFERENCIA EN OTRA PARTE
+
+    -->
+    <template id="refIcons">
+        <svg id="angularIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M427.146 512h169.692l-84.854-178.712z"  /><path d="M511.962 64L64 224l92.24 544L512 960l355.5-192L960 224 511.962 64zM688 704l-53.178-112H389.168L336 704h-80L512 144l256 560h-80z"  /></svg>
+        <svg id="wordpressIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M520.533333 661.333333l-108.8 265.386667a430.08 430.08 0 0 0 204.373334-0.853333m263.253333-624.64c8.106667 38.4 6.4 84.906667-9.386667 136.106666C828.586667 570.453333 725.333333 810.666667 686.933333 901.546667c148.48-66.133333 251.733333-213.76 251.733334-385.28 0-78.506667-21.333333-152.32-59.306667-215.04M183.893333 368.64S162.986667 341.333333 141.226667 341.333333h-22.613334C97.28 389.546667 85.333333 453.12 85.333333 512c0 174.506667 106.666667 324.693333 261.12 388.693333M133.546667 304.64C204.8 171.946667 347.306667 85.333333 512 85.333333c106.666667 0 203.946667 45.226667 278.613333 109.226667-21.333333-4.266667-43.946667 0.426667-68.266666 14.08-55.04 31.573333-72.96 120.32-1.706667 165.12 44.8 27.733333 60.586667 97.28 58.88 139.946667-1.28 42.24-103.253333 237.653333-103.253333 237.653333L576 410.88s-2.56-23.893333-2.56-30.72c0-8.533333 2.56-19.2 8.106667-25.6 3.84-3.84 9.386667-13.226667 15.786666-13.226667h47.36v-36.693333h-256V341.333333h8.106667c8.533333 0 16.64 12.373333 24.32 20.053334 9.386667 9.813333 21.333333 46.08 35.413333 83.626666l37.12 122.453334-80.213333 184.746666-87.893333-369.493333s2.56-25.6 8.106666-29.866667C337.066667 349.866667 341.333333 341.333333 348.586667 341.333333h2.133333v-36.693333H133.546667z" fill="" /></svg>
+        <svg id="sassIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 0c282.752 0 512 229.248 512 512s-229.248 512-512 512S0 794.752 0 512 229.248 0 512 0zM410.24 682.581333c7.466667 27.52 6.656 53.248-1.024 76.458667l-2.773333 7.68c-1.024 2.602667-2.218667 5.12-3.328 7.509333-5.973333 12.373333-13.909333 23.893333-23.68 34.56-29.781333 32.384-71.338667 44.672-89.173334 34.346667-19.2-11.178667-9.642667-56.96 24.917334-93.44 37.162667-39.168 90.453333-64.384 90.453333-64.384v-0.128l4.608-2.602667z m422.869333-463.402666c-23.125333-91.008-173.952-120.917333-316.672-70.186667-84.864 30.165333-176.810667 77.568-242.901333 139.392C194.901333 361.813333 182.4 425.813333 187.562667 452.565333c18.218667 94.336 147.498667 156.032 200.661333 201.813334v0.256c-15.658667 7.68-130.389333 65.237333-157.269333 124.8-28.8 62.72 4.48 107.562667 26.24 113.28 67.2 18.602667 136.32-15.36 173.44-70.357334 35.84-53.802667 32.682667-122.922667 17.237333-156.842666 21.162667-5.76 46.08-8.32 78.08-4.437334 89.642667 10.24 107.562667 66.56 103.68 89.6-3.84 22.997333-22.314667 36.437333-28.757333 40.277334-6.4 3.882667-8.32 5.12-7.722667 7.722666 0.64 3.84 3.882667 3.84 8.96 3.2 7.04-1.28 46.762667-19.2 48.682667-62.762666 1.92-55.04-50.602667-116.437333-144-115.2-38.4 0.682667-62.762667 3.882667-80 10.922666a15.445333 15.445333 0 0 0-4.48-4.48c-57.6-62.08-164.48-105.6-160-188.16 1.28-30.08 12.16-109.397333 204.8-205.397333 158.08-78.762667 284.202667-56.96 305.962666-8.96 31.274667 68.437333-67.242667 195.84-231.722666 214.357333-62.72 7.04-95.36-17.237333-103.722667-26.24-8.917333-9.6-10.197333-10.24-13.397333-8.277333-5.12 2.56-1.92 10.88 0 16 5.12 12.8 24.96 35.2 59.562666 46.72 30.037333 9.6 103.68 15.317333 192-19.2 99.157333-38.357333 176.597333-145.28 154.197334-234.88l3.114666 2.858667z" fill="" /></svg>
+        <svg id="phpIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M299.093333 435.498667h-40.277333l-21.973333 112.981333h35.754666c23.722667 0 41.386667-4.48 52.992-13.397333 11.605333-8.96 19.413333-23.850667 23.466667-44.757334 3.925333-20.053333 2.133333-34.218667-5.290667-42.453333-7.466667-8.234667-22.314667-12.373333-44.672-12.373333zM512 242.688C229.248 242.688 0 363.264 0 512s229.248 269.354667 512 269.354667S1024 660.736 1024 512c0-148.736-229.248-269.312-512-269.312z m-139.093333 317.909333c-11.136 10.666667-24.533333 18.688-39.125334 23.509334-14.336 4.608-32.64 6.997333-54.826666 6.997333H228.565333l-13.952 71.722667H155.818667l52.48-269.909334h113.066666c34.005333 0 58.794667 8.917333 74.410667 26.794667 15.616 17.834667 20.309333 42.752 14.08 74.752a121.002667 121.002667 0 0 1-13.013333 36.138667c-6.101333 10.88-14.08 20.906667-23.936 29.994666z m171.690666 30.506667l23.168-119.424c2.688-13.568 1.664-22.869333-2.901333-27.776-4.565333-4.949333-14.336-7.424-29.312-7.424H488.96l-30.037333 154.666667H400.554667l52.48-269.952h58.325333l-13.952 71.765333h51.968c32.725333 0 55.253333 5.717333 67.669333 17.109333s16.128 29.866667 11.221334 55.424l-24.405334 125.610667h-59.264z m324.138667-96.64a118.698667 118.698667 0 0 1-13.013333 36.138667c-6.101333 10.88-14.08 20.906667-23.936 29.994666a104.106667 104.106667 0 0 1-39.125334 23.509334c-14.336 4.608-32.64 6.997333-54.869333 6.997333h-50.346667l-13.952 71.765333h-58.794666l52.48-269.909333h113.024c34.005333 0 58.794667 8.917333 74.410666 26.794667 15.616 17.792 20.352 42.709333 14.122667 74.709333z m-110.72-58.965333h-40.234667l-22.016 112.981333h35.754667c23.765333 0 41.429333-4.48 52.992-13.397333 11.605333-8.96 19.413333-23.850667 23.509333-44.757334 3.925333-20.053333 2.090667-34.218667-5.333333-42.453333s-22.357333-12.373333-44.672-12.373333z"  /></svg>
+        <svg id="laravelIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" xmlns="http://www.w3.org/2000/svg" height="2500" viewBox="0 -.11376601 49.74245785 51.31690859" width="2418"><path d="m49.626 11.564a.809.809 0 0 1 .028.209v10.972a.8.8 0 0 1 -.402.694l-9.209 5.302v10.509c0 .286-.152.55-.4.694l-19.223 11.066c-.044.025-.092.041-.14.058-.018.006-.035.017-.054.022a.805.805 0 0 1 -.41 0c-.022-.006-.042-.018-.063-.026-.044-.016-.09-.03-.132-.054l-19.219-11.066a.801.801 0 0 1 -.402-.694v-32.916c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.023-.023.053-.04.079-.06.029-.024.055-.05.088-.069h.001l9.61-5.533a.802.802 0 0 1 .8 0l9.61 5.533h.002c.032.02.059.045.088.068.026.02.055.038.078.06.028.029.048.062.072.094.017.024.04.045.054.071.023.04.036.082.052.124.008.023.022.044.028.068a.809.809 0 0 1 .028.209v20.559l8.008-4.611v-10.51c0-.07.01-.141.028-.208.007-.024.02-.045.028-.068.016-.042.03-.085.052-.124.015-.026.037-.047.054-.071.024-.032.044-.065.072-.093.023-.023.052-.04.078-.06.03-.024.056-.05.088-.069h.001l9.611-5.533a.801.801 0 0 1 .8 0l9.61 5.533c.034.02.06.045.09.068.025.02.054.038.077.06.028.029.048.062.072.094.018.024.04.045.054.071.023.039.036.082.052.124.009.023.022.044.028.068zm-1.574 10.718v-9.124l-3.363 1.936-4.646 2.675v9.124l8.01-4.611zm-9.61 16.505v-9.13l-4.57 2.61-13.05 7.448v9.216zm-36.84-31.068v31.068l17.618 10.143v-9.214l-9.204-5.209-.003-.002-.004-.002c-.031-.018-.057-.044-.086-.066-.025-.02-.054-.036-.076-.058l-.002-.003c-.026-.025-.044-.056-.066-.084-.02-.027-.044-.05-.06-.078l-.001-.003c-.018-.03-.029-.066-.042-.1-.013-.03-.03-.058-.038-.09v-.001c-.01-.038-.012-.078-.016-.117-.004-.03-.012-.06-.012-.09v-21.483l-4.645-2.676-3.363-1.934zm8.81-5.994-8.007 4.609 8.005 4.609 8.006-4.61-8.006-4.608zm4.164 28.764 4.645-2.674v-20.096l-3.363 1.936-4.646 2.675v20.096zm24.667-23.325-8.006 4.609 8.006 4.609 8.005-4.61zm-.801 10.605-4.646-2.675-3.363-1.936v9.124l4.645 2.674 3.364 1.937zm-18.422 20.561 11.743-6.704 5.87-3.35-8-4.606-9.211 5.303-8.395 4.833z" fill=""/></svg>
+        <svg id="bootstrapIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" class="bi bi-bootstrap-fill" viewBox="0 0 16 16">
+            <path d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
+            <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z"/>
+        </svg>       
+        <svg id="jsIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M64 64v896h896V64H64z m487.6 698.8c0 87.2-51.2 127-125.8 127-67.4 0-106.4-34.8-126.4-77l68.6-41.4c13.2 23.4 25.2 43.2 54.2 43.2 27.6 0 45.2-10.8 45.2-53V475.4h84.2v287.4z m199.2 127c-78.2 0-128.8-37.2-153.4-86l68.6-39.6c18 29.4 41.6 51.2 83 51.2 34.8 0 57.2-17.4 57.2-41.6 0-28.8-22.8-39-61.4-56l-21-9c-60.8-25.8-101-58.4-101-127 0-63.2 48.2-111.2 123.2-111.2 53.6 0 92 18.6 119.6 67.4L800 580c-14.4-25.8-30-36-54.2-36-24.6 0-40.2 15.6-40.2 36 0 25.2 15.6 35.4 51.8 51.2l21 9c71.6 30.6 111.8 62 111.8 132.4 0 75.6-59.6 117.2-139.4 117.2z" fill="" /></svg>
+        <svg id="gitIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" class="bi bi-git" viewBox="0 0 16 16">
+            <path d="M15.698 7.287 8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45 1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025 1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.031 1.031 0 0 0 0-1.457"/>
+        </svg>
+        <svg id="sqlIcon" class="svg-icon" style="width: 2em; height: 2em;vertical-align: middle;overflow: hidden;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" class="bi bi-filetype-sql" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM0 14.841a1.129 1.129 0 0 0 .401.823c.13.108.288.192.478.252s.411.091.665.091c.338 0 .624-.053.858-.158.237-.106.416-.252.54-.44a1.17 1.17 0 0 0 .187-.656c0-.224-.045-.41-.135-.56a1 1 0 0 0-.375-.357 2.027 2.027 0 0 0-.565-.21l-.621-.144a.97.97 0 0 1-.405-.176.369.369 0 0 1-.143-.299c0-.156.061-.284.184-.384.125-.101.296-.152.513-.152.143 0 .266.022.37.068a.624.624 0 0 1 .245.181.56.56 0 0 1 .12.258h.75a1.092 1.092 0 0 0-.199-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.552.05-.776.15-.225.099-.4.24-.528.421-.127.182-.19.395-.19.639 0 .201.04.376.123.524.082.149.199.27.351.367.153.095.332.167.54.213l.618.144c.207.049.36.113.462.193a.387.387 0 0 1 .153.325c0 .11-.029.207-.085.29A.558.558 0 0 1 2 15.31c-.111.047-.249.07-.413.07-.117 0-.224-.013-.32-.04a.835.835 0 0 1-.248-.115.579.579 0 0 1-.255-.384H0Zm6.878 1.489-.507-.739c.176-.162.31-.362.401-.6.092-.239.138-.507.138-.806v-.501c0-.371-.07-.693-.208-.967a1.495 1.495 0 0 0-.589-.636c-.256-.15-.561-.225-.917-.225-.351 0-.656.075-.914.225-.256.149-.453.36-.592.636a2.138 2.138 0 0 0-.205.967v.5c0 .37.069.691.205.965.139.273.336.485.592.636a1.8 1.8 0 0 0 .914.222 1.8 1.8 0 0 0 .6-.1l.294.422h.788ZM4.262 14.2v-.522c0-.246.038-.456.114-.63a.91.91 0 0 1 .325-.398.885.885 0 0 1 .495-.138c.192 0 .357.046.495.138a.88.88 0 0 1 .325.398c.077.174.115.384.115.63v.522c0 .164-.018.312-.053.445-.035.13-.087.244-.155.34l-.106-.14-.105-.147h-.733l.451.65a.638.638 0 0 1-.251.047.872.872 0 0 1-.487-.147.916.916 0 0 1-.32-.404 1.67 1.67 0 0 1-.11-.644Zm3.986 1.057h1.696v.674H7.457v-3.999h.79v3.325Z"/>
+        </svg>
+    </template>
+
+    
+    <script src="./profile.js"></script>
+    <script src="./portfolio.js"></script>
+    <script src="./home.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        initApp();
+    </script>
+
+
+</body>
+
+</html>
